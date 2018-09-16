@@ -1,7 +1,7 @@
 class Pokemon
   attr_accessor :id, :name, :type, :db, :hp
 
-  def initialize( hp:nil, id:, name:, type:, db:)
+  def initialize( hp:60, id:, name:, type:, db:)
     @id = id
     @name = name
     @type = type
@@ -16,7 +16,7 @@ class Pokemon
   def self.find(index, db)
     a = db.execute("SELECT * FROM pokemon WHERE pokemon.id = ?", index)
     b = a[0]
-    db.execute("UPDATE pokemon SET hp = 60 WHERE id = ?", b[0])
+    #db.execute("UPDATE pokemon SET hp = 60 WHERE id = ?", b[0])
     x = Pokemon.new(id:b[0],name:b[1],type:b[2], db:db, hp: 60)
     #db.execute("UPDATE pokemon SET hp = 60 WHERE id = ?", b[0])
     #x
