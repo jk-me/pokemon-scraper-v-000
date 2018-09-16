@@ -17,7 +17,7 @@ class Pokemon
     a = db.execute("SELECT * FROM pokemon WHERE pokemon.id = ?", index)
     b = a[0]
     x = Pokemon.new(id:b[0],name:b[1],type:b[2], db:db, hp: 60)
-    Pokemon.save(x.name,x.type,x.hp)
+    #Pokemon.save(x.name,x.type,x.hp)
     x
   end
 end
